@@ -7,7 +7,7 @@ public class Calcular {
 	private int x;
 	private int y;
 	
-	public int operacion(String x, String y) throws InputMismatchException {
+	public int operacion(String x, String y) throws InputMismatchException, ArithmeticException {
 		
 		try {
 			
@@ -22,13 +22,20 @@ public class Calcular {
 			
 		}
 		
-		// Luego verifico si x es mayor o igual a 0 y si y es mayor a 0
-		if(this.x >= 0 && this.y > 0) {
-			return this.x/this.y;
-		} else {
+		// Si y es 0
+		if(this.y == 0) {
+			System.err.println("java.lang.ArithmeticException: / by Zero");
+			throw new ArithmeticException();
+		}
+		
+		// Si al menos uno de ellos es un entero negativo
+		if(this.x < 0 || this.y < 0) {
 			System.err.println("java.util.InputMismatchException");
 			throw new InputMismatchException();
 		}
+		
+		// Si todo es valido
+		return this.x/this.y;
 		
 	}
 

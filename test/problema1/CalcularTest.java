@@ -21,5 +21,17 @@ public class CalcularTest {
 		Calcular calcular = new Calcular();
 		calcular.operacion("10", "Boa tarde");
 	}
+	
+	@Test(expected = ArithmeticException.class)
+	public void testOperacionPorCero() throws ArithmeticException {
+		Calcular calcular = new Calcular();
+		calcular.operacion("10", "0");
+	}
+	
+	@Test(expected = InputMismatchException.class)
+	public void testOperacionNoEntero() throws InputMismatchException {
+		Calcular calcular = new Calcular();
+		calcular.operacion("23.323", "0");
+	}
 
 }
