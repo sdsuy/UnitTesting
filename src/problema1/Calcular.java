@@ -26,6 +26,7 @@ public class Calcular {
 		if(this.x >= 0 && this.y > 0) {
 			return this.x/this.y;
 		} else {
+			System.err.println("java.util.InputMismatchException");
 			throw new InputMismatchException();
 		}
 		

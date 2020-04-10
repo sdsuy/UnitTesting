@@ -19,7 +19,7 @@ public class CalcularTest {
 	@Test(expected = InputMismatchException.class)
 	public void testOperacionMal() throws InputMismatchException {
 		Calcular calcular = new Calcular();
-		calcular.operacion("10", "Boa tarde");		
+		calcular.operacion("10", "Boa tarde");
 	}
 
 }
